@@ -1,0 +1,120 @@
+body {
+	padding-bottom: 50px;
+}
+
+#loading {
+	position: fixed;
+	z-index: 9999;
+	top: 0px;
+	left: 50%;
+	transform: translateX(-50%);
+	padding-top: 20px;
+	font-variant: small-caps;
+	font-size: 20px;
+	border: 2px solid var(--primary);
+	border-top: 0;
+	background-color: var(--white);
+	width: 200px;
+	height: 80px;
+	text-align: center;
+}
+
+header .logo {
+	margin-right: 20px;
+}
+
+.error {
+	color: var(--error);
+	font-weight: bold;
+}
+.success {
+	color: var(--success);
+	font-weight: bold;
+}
+.right {
+	text-align: right;
+}
+.left {
+	float: left;
+}
+.label {
+	font-weight: bold;
+}
+
+.text-lg {
+	font-size: 1.2rem;
+}
+
+.pre {
+	background-color: #DDD;
+	padding: 2px 5px;
+	border-radius: 2px;
+}
+
+pre.code, pre.query-response, pre.log-response {
+	border: 1px solid var(--black);
+	border-radius: 10px;
+	background-color: #DDD;
+	padding: 5px;
+	padding-left: 30px;
+	font-family: monospace;
+}
+pre.query-response {
+	border: 1px solid var(--success);
+	width: 100%;
+	height: 350px;
+	overflow: scroll;
+}
+pre.log-response {
+	margin-top: 10px;
+	border: 1px solid var(--success);
+	background-color: var(--black);
+	color: var(--success);
+	width: 100%;
+	padding: 20px 5px;
+}
+pre.rs-success {
+	border: 1px solid var(--success);
+}
+pre.rs-error {
+	border: 1px solid var(--error);
+}
+
+.close-bt {
+	width: 30px;
+	height: 30px;
+	border-radius: 15px;
+	border: 1px solid var(--black);
+	background-color: var(--white);
+	float: right;
+	display: block;
+	position: absolute;
+	right: 15px;
+	text-align: center;
+	cursor: pointer;
+}
+
+.card {
+	padding: 20px;
+}
+.actions {
+	margin-top: 20px;
+	text-align: right;
+}
+#ajax-response, .response {
+	border: 1px solid var(--primary);
+	border-radius: 10px;
+	padding: 10px;
+	margin: 10px 0;
+}
+
+textarea.query-sql {
+	width: 100%;
+	height: 200px;
+	padding: 5px;
+}
+span.query {
+	color: var(--success);
+	font-family: monospace;
+	margin-left: 30px;
+}

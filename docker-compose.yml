@@ -1,0 +1,49 @@
+version: '3.7'
+
+services:
+  dunedin_sql:
+    image: mariadb
+    container_name: "dunedin_sql"
+    command: --default-authentication-plugin=mysql_native_password
+    volumes:
+      - ./database:/home/backups
+    env_file:
+      - ./docker/.env
+    ports:
+      - 3306
+
+  dunedin_php:
+    hostname: api.dunedin.localhost.com
+    container_name: "dunedin_php"
+    build:
+      context: .
+      dockerfile: ./docker/Dockerfile
+    volumes: 
+      - ./api-php/src:/var/www/html
+      - ./api-php/logs:/var/www/logs
+      - ./backups:/var/www/backups
+      - ./api-php/medias:/var/www/medias
+    ports:
+      - 8080:80
+      - 443
+
+  dunedin_phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: dunedin_phpmyadmin
+    environment:
+      PMA_HOST: dunedin_sql
+      PMA_PORT: 3306
+      PMA_ARBITRARY: 1
+    depends_on:
+      - dunedin_sql
+    ports:
+      - 8183:80
+
+  dunedin_mongodb:
+    image: mongo
+    container_name: "dunedin_mongodb"
+    env_file: docker/.env
+    ports:
+      - 27017:27017
+    volumes:
+      - ./database:/application

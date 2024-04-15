@@ -1,0 +1,20 @@
+table.hide-header th {
+	display: none;
+}
+
+.table-scroll {
+	overflow: scroll;
+	max-width: 100%;
+	max-height: 750px;
+	scroll-behavior: auto;
+}
+
+.raw-switch {
+	position: absolute;
+	background: white;
+	width: 200px;
+	text-align: center;
+	right: 20px;
+	margin-top: 5px;
+}
+
