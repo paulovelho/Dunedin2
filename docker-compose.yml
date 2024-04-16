@@ -22,7 +22,7 @@ services:
       - ./api-php/src:/var/www/html
       - ./api-php/logs:/var/www/logs
       - ./backups:/var/www/backups
-      - ./api-php/medias:/var/www/medias
+      - ./medias:/var/www/medias
     ports:
       - 8080:80
       - 443
@@ -39,11 +39,11 @@ services:
     ports:
       - 8183:80
 
-  dunedin_mongodb:
-    image: mongo
-    container_name: "dunedin_mongodb"
-    env_file: docker/.env
-    ports:
-      - 27017:27017
-    volumes:
-      - ./database:/application
+  # dunedin_mongodb:
+  #   image: mongo
+  #   container_name: "dunedin_mongodb"
+  #   env_file: docker/.env
+  #   ports:
+  #     - 27017:27017
+  #   volumes:
+  #     - ./database:/application

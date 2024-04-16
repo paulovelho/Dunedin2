@@ -1,16 +1,15 @@
 sftp-config.json
 *.log
 magrathea.conf
-api/logs/*
+api-php/logs/*
 backups/*.sql
 
 docker/.env
-api/vendor
-api/src/vendor
-api/src/vendor/*
-api/.composer.lock
-api/composer.phar
-api/medias/*
+api-php/vendor
+api-php/src/vendor
+api-php/.composer.lock
+api-php/composer.phar
+api-php/medias/*
 
 database/dunedin.tgz
 
