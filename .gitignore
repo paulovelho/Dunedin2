@@ -13,8 +13,11 @@ api-php/medias/*
 
 database/dunedin.tgz
 
+.angular
 .DS_Store
 
+web/node_modules
+web/dist
 node_modules/
 
 medias/

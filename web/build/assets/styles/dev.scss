@@ -1,0 +1,7 @@
+$colors: red, orange, yellow, green, blue, purple, black, white;
+
+@each $color in $colors {
+	.dev-border-#{$color} {
+		border: 1px solid $color;
+	}
+}

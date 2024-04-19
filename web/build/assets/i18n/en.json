@@ -1,0 +1,94 @@
+{
+	"title": "Animateka",
+	"dev-store": "Store",
+
+	"error-general": "An error happened!",
+
+	"date-format": "yyyy-MM-dd H:mm:ss a",
+	"save": "Save",
+	"cancel": "Cancel",
+	"loading": "Loading...",
+	"load-more": "Load more",
+	"search": "Search",
+	"save-success-general": "Data successfully saved!",
+	"save-success": "{{object}} saved successfully!",
+	"save-error": "Error saving {{object}}",
+	"select-placeholder": "Select {{item}}",
+	"validation-error": "Error on form validation",
+	"edit": "Editing {{name}}",
+	"new": "New {{object}}",
+	"back": "Back",
+	"object-created": "{{object}} created!",
+
+	"comments": "Comments",
+	"id-title": "#ID",
+	"name": "Name",
+	"status": "Status",
+	"active": "Active",
+	"created_at": "Creation Date",
+
+	"errors": {
+		"unknown-error": "Unknown Error!",
+		"email-required": "Email is required",
+		"email-invalid": "Invalid email address",
+		"password-required": "Password is required",
+		"folder-name-empty": "Folder name cannot be empty",
+		"login-error": "Login error!"
+	},
+
+	"login": {
+		"email": "E-mail",
+		"password": "Password",
+		"sign-in": "Sign In",
+		"success": "Logged In!"
+	},
+
+	"my-account": {
+		"title": "My Account",
+		"change-password": "Change Password",
+		"password": "Password",
+		"password-check": "Confirm Password",
+		"generate-password": "Suggest Password"
+	},
+
+	"users": {
+		"list-title": "Registered users",
+		"edit": "Edting User {{name}}",
+		"new": "New User",
+		"title-id_display": "ID#",
+		"title-name": "Name",
+		"title-email": "E-mail",
+		"title-roleName": "Role",
+		"title-password": "Password",
+		"title-active": "Active",
+		"title-phone": "Phone number",
+		"title-language": "Language",
+		"title-last_login": "Last Login",
+		"btn-gen-password": "Generate Password"
+	},
+
+	"explorer": {
+		"create-folder": "Create Folder",
+		"create-folder-btn": "Create",
+		"upload-file": "Upload File",
+		"folder-name": "Folder name",
+		"file-detail": "Details",
+		"file-download": "Download",
+		"detail-size": "Size:",
+		"driver-title": "Explore: "
+	},
+
+	"keys": {
+		"list-title": "Keys",
+		"id": "#ID",
+		"val": "API value",
+		"folder": "Media Folder",
+		"create-confirm": "Do you want to crawl this key?",
+		"crawl": "Crawl",
+		"crawls": "Crawls",
+		"crawl-log": "Crawling Log",
+		"view-crawl-log": "View Logs",
+		"execute-crawl": "Execute Crawl"
+	}
+
+}

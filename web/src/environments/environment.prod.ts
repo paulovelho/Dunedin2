@@ -5,5 +5,5 @@ export const environment: iEnv = {
 	dev: false,
 	production: true,
 	debug: false,
-	api: "https://api.cloud.paulovelho.com",
+	api: "https://api.dunedin.paulovelho.com",
 };
