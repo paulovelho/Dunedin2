@@ -1,0 +1,75 @@
+<app-window icon="fa-user" [showClose]="false" [title]="title | transloco: { name }" [loading]="loading">
+
+	<form *ngIf="user" [formGroup]="form!" [ngClass]="fs.formClass(form)">
+		<div class="row">
+			<div class="col-sm-6">
+				<app-input id="name"
+					formControlName="name"
+					label="users.title-name"
+					[required]="true"
+				></app-input>
+			</div>
+			<div class="col-sm-6">
+				<app-input 
+					id="email"
+					[type]="isNew ? 'text' : 'disabled' "
+					formControlName="email"
+					label="users.title-email"
+					[required]="true"
+				></app-input>
+			</div>
+		</div>
+		<div class="row" *ngIf="isNew">
+			<div class="col-sm-7">
+				<app-input
+					id="password"
+					type="disabled"
+					formControlName="password"
+					label="users.title-password"
+					[required]="true"
+				></app-input>
+			</div>
+			<div class="col-sm-5">
+				<app-button
+					extraClass="label-margin"
+					type="primary"
+					caption="users.btn-gen-password"
+					(action)="genPassword()"
+				></app-button>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-4">
+				<app-input 
+					id="phone_number"
+					formControlName="phone_number"
+					label="users.title-phone"
+				></app-input>
+			</div>
+			<div class="col-sm-4">
+				<app-select
+					id="role"
+					[options]="roles"
+					formControlName="role"
+					label="users.title-roleName"
+					[required]="true"
+				></app-select>
+			</div>
+			<div class="col-sm-4">
+				<app-select
+					id="language"
+					[options]="languages"
+					formControlName="language"
+					label="users.title-language"
+					[required]="true"
+				></app-select>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-5 offset-sm-7">
+				<app-button type="save" (action)="save()"></app-button>
+			</div>
+		</div>
+	</form>
+
+</app-window>

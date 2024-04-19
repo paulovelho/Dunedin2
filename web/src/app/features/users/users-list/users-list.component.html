@@ -1,0 +1,19 @@
+<app-window
+	[title]="'users.list-title' | transloco"
+	icon="fa-users"
+	[loading]="loading"
+	[showClose]="false"
+	>
+	<span actions>
+		<a class="transition" (click)="addUser()">
+			<i class="fa fa-plus-circle"></i></a>
+	</span>
+	<app-table
+		[items]="items"
+		[keys]="keys"
+		[titles]="titles"
+		(rowClick)="userClick($event);"
+		*ngIf="!loading"
+	></app-table>
+</app-window>
+

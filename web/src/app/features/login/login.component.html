@@ -1,0 +1,31 @@
+<div class="login-container">
+	<div class="col-xl-4 col-md-6 col-10 mx-auto">
+		<div class="card">
+			<div class="card-body text-center">
+				<h2 class="card-title">
+					<img src="./assets/images/logo.png" />
+				</h2>
+				<form [formGroup]="form" (ngSubmit)="onSubmit(form.value)" class=" text-left">
+					<div class="form-group">
+						<input [formControl]="email" class="form-control checking-field" [placeholder]="'login.email' | transloco" type="text">
+						<span class="help-block text-danger"
+							*ngIf="form.get('email')!.touched && form.get('email')!.hasError('required')">{{ "errors.email-required" | transloco }}</span>
+						<span class="help-block text-danger"
+							*ngIf="form.get('email')!.touched && form.get('email')!.hasError('invalidEmail')">{{ "errors.email-invalid" | transloco }}</span>
+					</div>
+					<div class="form-group">
+						<input [formControl]="password" class="form-control checking-field" [placeholder]="'login.password' | transloco" type="password">
+						<span class="help-block text-danger"
+							*ngIf="form.get('password')!.touched && form.get('password')!.hasError('required')">{{ "errors.password-required" | transloco }}</span>
+					</div>
+					<div class="form-group">
+						<button [disabled]="!form.valid" class="btn btn-main btn-block center" type="submit">
+							<span *ngIf="!loading">{{ "login.sign-in" | transloco }}</span>
+							<app-loading *ngIf="loading" extraClass="small white ml-4"></app-loading>
+						</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>

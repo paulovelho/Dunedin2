@@ -1,0 +1,5 @@
+commit dcbe82d2da805c9b52faedcf8ca3e891d8ad5e71
+Author: Paulo Martins <paulovelho@paulovelho.com>
+Date:   Tue Apr 16 11:08:18 2024 -0300
+
+    cleaning vendor and starting gagS

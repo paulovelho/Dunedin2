@@ -1,0 +1,17 @@
+<div class="form-group" *ngIf="id">
+	<label for="{{ id }}">
+		<span *ngIf="label">{{ label }}</span>
+		<span *ngIf="translate">{{ translate | transloco }}</span>
+		<span class="required" *ngIf="required">*</span>
+	</label>
+	<input type="{{type}}" 
+		class="form-control checking-field"
+		[required]="required"
+		[ngClass]="{ 'ng-invalid': error }"
+		[id]="id" [name]="id"
+		[placeholder]="placeholder"
+		[(ngModel)]="value" (ngModelChange)="valueEmit();"
+		[disabled]="type == 'disabled'"
+	>
+</div>
+<span *ngIf="!id">ID not set</span>

@@ -1,0 +1,71 @@
+<app-window
+	icon="fa-user"
+	[loading]="loading"
+	[showClose]="false"
+	[title]="'my-account.title' | transloco"
+>
+
+<form [formGroup]="form!">
+	<div class="row">
+		<div class="col-sm-4">
+			<app-input
+				id="name"
+				formControlName="name"
+				label="users.title-name"
+				[required]="true"
+			></app-input>
+		</div>
+		<div class="col-sm-4">
+			<app-input
+				id="email"
+				formControlName="email"
+				label="users.title-email"
+				type="disabled"
+			></app-input>
+		</div>
+		<div class="col-sm-4">
+			<app-input
+				id="phone_number"
+				formControlName="phone_number"
+				label="users.title-phone"
+			></app-input>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-sm-2">
+			<app-select
+				id="language"
+				[options]="languages"
+				formControlName="language"
+				label="users.title-language"
+				[required]="true"
+			></app-select>
+		</div>
+		<div class="col-sm-7 label-margin">
+			<span class="role-title">{{ 'users.title-roleName' | transloco }}:</span>
+			<span class="role-value">{{ user?.role }}</span>
+		</div>
+		<div class="col-sm-3 label-margin">
+			<app-button
+				type="primary"
+				caption="my-account.change-password"
+				(action)="goToPasswordChange()"
+			></app-button>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-sm-6 offset-sm-6">
+			<app-button
+				type="save"
+				[loading]="loading"
+				(action)="save()"
+			></app-button>
+		</div>
+	</div>
+
+
+</form>
+
+</app-window>

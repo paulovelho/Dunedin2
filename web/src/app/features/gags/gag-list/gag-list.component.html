@@ -1,0 +1,22 @@
+<app-window
+	title="{{ total }} results found"
+	icon="fa-search"
+	[loading]="loading"
+	[showClose]="false"
+>
+<div class="row">
+	<div class="col-sm-12">
+		<app-gag-item
+			*ngFor="let item of list"
+			[item]="item"
+		></app-gag-item>
+	</div>
+	<div class="col-sm-12" *ngIf="list && total && total > list!.length">
+		<app-button
+			icon="fa-forward"
+			caption="Next Page"
+			(action)="nextPage.emit()"
+		></app-button>
+	</div>
+</div>
+</app-window>

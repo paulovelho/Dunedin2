@@ -1,0 +1,15 @@
+<div class="form-group" *ngIf="id">
+	<label for="{{ id }}">
+		{{ label | transloco }}
+		<span class="required" *ngIf="required">*</span>
+	</label>
+	<textarea type="text" 
+		class="form-control checking-field"
+		[required]="required"
+		[ngClass]="{ 'ng-invalid': error }"
+		[id]="id" [name]="id"
+		[(ngModel)]="value"
+		(ngModelChange)="valueEmit();"
+	></textarea>
+</div>
+<span *ngIf="!id">ID not set</span>

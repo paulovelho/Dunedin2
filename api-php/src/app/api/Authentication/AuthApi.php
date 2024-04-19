@@ -1,13 +1,13 @@
 <?php
 
-namespace Animateka\Authentication;
-use Magrathea2\Exceptions\MagratheaApiException;
+namespace Dunedin\Authentication;
 require("../vendor/autoload.php");
 
 use Exception;
+use Magrathea2\Admin\Features\User\AdminUser;
 use Magrathea2\Admin\Features\User\AdminUserControl;
+use Magrathea2\Exceptions\MagratheaApiException;
 use Magrathea2\MagratheaApiAuth;
-use MagratheaCloud\User;
 
 class AuthApi extends MagratheaApiAuth {
 
@@ -17,7 +17,7 @@ class AuthApi extends MagratheaApiAuth {
 
 	private function ReturnUserToken($id, $email) {
 		try {
-			$u = new User($id);
+			$u = new AdminUser($id);
 			$response = [
 				"id" => $id,
 				"email" => $email,

@@ -18,10 +18,11 @@ GRANT ALL PRIVILEGES ON user.* TO 'user'@'%' WITH GRANT OPTION;
 
 ##### APP Configuration:
 ```
-==[n]app_name==|>>MagratheaCloud>>;;
-==[s]code_path==|>>/var/www/html/api>>;;
+==[n]app_name==|>>Dunedin>>;;
+==[s]code_path==|>>/var/www/html/app>>;;
 ==[s]code_structure==|>>feature>>;;
-==[s]code_namespace==|>>MagratheaCloud>>;;
+==[s]code_namespace==|>>Dunedin>>;;
+==[n]media_folder==|>>/var/www/medias>>;;
 ```
 
 

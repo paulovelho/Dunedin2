@@ -4,7 +4,6 @@ namespace Dunedin;
 
 use Dunedin\Gag\GagAdmin;
 use Magrathea2\Admin\Admin;
-use Magrathea2\Tests\TestsManager;
 use Magrathea2\Admin\AdminMenu;
 use Magrathea2\Admin\Features\ApiExplorer\ApiExplorer;
 use Magrathea2\Admin\Features\AppConfig\AdminFeatureAppConfig;
@@ -27,22 +26,23 @@ class DunedinAdmin extends Admin implements \Magrathea2\Admin\iAdmin {
 	public function SetFeatures() {
 		parent::SetFeatures();
 		$this->AddAppConfiguration();
-		// $this->LoadApi();
+		$this->LoadApi();
 		$this->LoadFeatures();
 	}
 
 	public function LoadFeatures() {
 		$this->features["gags"] = new GagAdmin();
+		$this->features["importer"] = new ImporterAdmin();
 		$this->AddFeaturesArray($this->features);
 	}
 
-	// public function LoadApi() {
-	// 	$api = new MagratheaCloudApi();
-	// 	$apiFeature = new ApiExplorer();
-	// 	$apiFeature->SetApi($api);
-	// 	$this->features["api"] = $apiFeature;
-	// 	$this->AddFeature($apiFeature);
-	// }
+	public function LoadApi() {
+		$api = new DunedinApi();
+		$apiFeature = new ApiExplorer();
+		$apiFeature->SetApi($api);
+		$this->features["api"] = $apiFeature;
+		$this->AddFeature($apiFeature);
+	}
 
 	public function AddAppConfiguration() {
 		$appConfig = new AdminFeatureAppConfig(true);
@@ -56,17 +56,17 @@ class DunedinAdmin extends Admin implements \Magrathea2\Admin\iAdmin {
 		$menu = new AdminMenu();
 		$menu
 		->Add($this->features["appconfig"]->GetMenuItem())
+		->Add($this->features["importer"]->GetMenuItem())
 
-		// ->Add($menu->CreateTitle("Api"))
-		// ->Add($this->features["api"]->GetMenuItem())
+		->Add($menu->CreateTitle("Api"))
+		->Add($this->features["api"]->GetMenuItem())
 
 		->Add($menu->CreateTitle("Features"))
 		->Add($this->features["gags"]->GetMenuItem())
 
 		->Add($menu->CreateSpace())
-		->Add($menu->CreateSpace())
-
-		->Add($menu->CreateTitle("Magrathea"));
+	
+		->Add(["title" => "Magrathea", "type" => "main" ]);
 		$this->AddMagratheaMenu($menu);
 
 		$menu->Add($menu->GetLogoutMenuItem());

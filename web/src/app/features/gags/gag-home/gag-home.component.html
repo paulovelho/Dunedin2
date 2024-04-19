@@ -1,0 +1,11 @@
+<app-search-input
+	(updateQuery)="search($event)"
+	[loading]="loading"
+></app-search-input>
+
+<app-gag-list
+	[total]="total"
+	[loading]="loading"
+	[list]="data"
+	(nextPage)="nextPage()"
+></app-gag-list>

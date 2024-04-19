@@ -1,0 +1,31 @@
+<nav class="nav az-navbar fixed-top">
+	<a class="navbar-brand" (click)="goHome();">
+		<img src="assets/images/logo_top.png" alt="" class="d-md-block d-none">
+		<img src="assets/images/logo_top.png" alt="" class="d-md-none">
+	</a>
+
+	<ul class="nav right-section">
+		<li class="nav-item">
+			<div class="dropdown float-right user-menu">
+				<a class="dropdown-toggle user-link" data-toggle="dropdown" role="button" aria-expanded="false">
+					<span class="d-lg-inline d-none">{{ navTitle }}</span>
+					<i class="fa fa-sort-down nav-drop"></i>
+				</a>
+
+				<ul class="dropdown-menu">
+					<li class="user-info">
+						<p>
+							<small>{{user?.email}}</small>
+						</p>
+					</li>
+					<div class="dropdown-divider"></div>
+					<a class="dropdown-item" (click)="navDev();"><i class="fa fa-code"></i>Dev Area</a>
+					<a class="dropdown-item" (click)="navMyData();"><i class="fa fa-cog"></i>My Account</a>
+					<div class="dropdown-divider"></div>
+					<a class="dropdown-item" (click)="logout();"><i class="fa fa-power-off"></i>Log out</a>
+				</ul>
+			</div>
+		</li>
+	</ul>
+
+</nav>

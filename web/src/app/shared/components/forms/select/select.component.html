@@ -1,0 +1,19 @@
+<div class="form-group">
+	<label for="{{ id }}">
+		{{ label | transloco }}
+		<span class="required" *ngIf="required">*</span>
+		<app-loading *ngIf="loading" extraClass="inline small"></app-loading>
+	</label>
+	<select 
+		class="form-control checking-field"
+		[id]="id"
+		[name]="id!"
+		[(ngModel)]="value"
+		(change)="valueEmit()"
+		>
+		<option *ngIf="placeholder != null" value="" disabled selected>{{ placeholder }}</option>
+		<option *ngFor="let i of options" [value]="i.value" [selected]="i.value == value">
+			{{ i.caption }}
+		</option>
+	</select>
+</div>

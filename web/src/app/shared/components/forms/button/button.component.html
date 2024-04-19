@@ -1,0 +1,12 @@
+<button
+	mat-raised-button
+	class="btn transition btn-100"
+	[ngClass]='btclass'
+	[disabled]="loading"
+	(click)="doAction()">
+		<i class="fa" [ngClass]='icon'></i>
+		<span *ngIf="translate">{{ translate | transloco }}</span>
+		<span *ngIf="caption">{{ caption }}</span>
+		<span class="subcaption" *ngIf="subcaption">{{ subcaption | transloco }}</span>
+		<app-loading *ngIf="loading" class="loading-component" extraClass="inline small {{ loadingClass }}"></app-loading>
+</button>

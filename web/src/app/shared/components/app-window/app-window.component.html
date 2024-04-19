@@ -1,0 +1,23 @@
+<div widget class="card" *ngIf="!hidden">
+	<div class="card-header">
+		<span class="title">
+			<i class="fa" [ngClass]="icon"></i>
+			{{ title }}
+		</span>
+		<app-loading *ngIf="loading" extraClass="inline small white"></app-loading>
+		<div class="widget-controls">
+			<ng-content class="other-actions" select="[actions]"></ng-content>
+			<a data-widgster="expand" class="transition" (click)="expand()" *ngIf="collapsable && hideContent">
+				<i class="fa fa-chevron-down"></i></a>
+			<a data-widgster="collapse" class="transition" (click)="collapse()" *ngIf="collapsable && !hideContent">
+				<i class="fa fa-chevron-up"></i></a>
+			<a data-widgster="close" class="transition" (click)="close()" *ngIf="showClose">
+				<i class="fa fa-times"></i></a>
+		</div>
+	</div>
+
+	<div class="card-body widget-body" *ngIf="!hideContent" [@slideUpDown]>
+		<ng-content></ng-content>
+	</div>
+</div>
+
