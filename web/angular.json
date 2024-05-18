@@ -76,6 +76,11 @@
 									"maximumError": "40kb"
 								}
 							],
+							"optimization": {
+								"scripts": true,
+								"styles": true,
+								"fonts": false
+							},
 							"outputHashing": "all"
 						},
 						"staging": {

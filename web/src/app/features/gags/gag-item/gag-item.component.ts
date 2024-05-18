@@ -17,9 +17,6 @@ export class GagItemComponent {
 		private clipboard: Clipboard,
 		private toaster: Toaster,
 	) {
-		console.log(location.origin);
-		console.log(location.href);
-		console.log(location.pathname);		
 	}
 
 	@Input() item?: iGag
