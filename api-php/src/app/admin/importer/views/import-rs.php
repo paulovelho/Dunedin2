@@ -1,11 +1,3 @@
-<?php
-
-use Magrathea2\Admin\AdminElements;
-
-$elements = AdminElements::Instance();
-
-?>
-
 <div class="card" id="import-result-card" style="display: none;">
 	<div class="card-header">
 		Import file <span id="file-name">...</span>

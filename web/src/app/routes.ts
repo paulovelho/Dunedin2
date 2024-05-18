@@ -2,6 +2,7 @@ import { Route, Routes } from '@angular/router';
 import { ErrorComponent } from './shared/error/error.component';
 import { MainComponent } from './shared/layout/main.component';
 import { IsAdmin, IsLogged, IsManager } from './services/auth/auth-guard.service';
+import { SharedGagComponent } from './features/gags/shared-gag/shared-gag.component';
 
 const devRoute = {
 	path: 'dev',
@@ -22,6 +23,10 @@ export const routes: Routes = [
 		children: [
 			devRoute,
 		],
+	},
+	{
+		path: 'shared',
+		component: SharedGagComponent,
 	},
 	{
 		path: 'app',

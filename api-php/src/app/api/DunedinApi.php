@@ -6,6 +6,7 @@ use Dunedin\Authentication\AuthApi;
 use Dunedin\Gag\GagApi;
 use Magrathea2\Config;
 use Magrathea2\MagratheaApi;
+use Magrathea2\MagratheaPHP;
 
 class DunedinApi extends MagratheaApi {
 
@@ -30,12 +31,22 @@ class DunedinApi extends MagratheaApi {
 		]);
 		$this->SetUrl();
 		$this->SetAuth();
+		$this->Version();
 		$this->AddGags();
 	}
 
 	private function SetUrl() {
 		$url = Config::Instance()->Get("app_url");
 		$this->SetAddress($url);
+	}
+
+	private function Version() {
+		$this->Add("GET", "version", null, function($params) {
+			return [
+				"version" => MagratheaPHP::Instance()->AppVersion(),
+				"magrathea_version" => MagratheaPHP::Instance()->Version(),
+			];
+		}, self::OPEN);
 	}
 
 	private function SetAuth() {
@@ -52,6 +63,7 @@ class DunedinApi extends MagratheaApi {
 		$this->Add("GET", "search", $gagApi, "Search", self::LOGGED);
 		$this->Add("POST", "author", $gagApi, "Author", self::LOGGED);
 		$this->Add("GET", "author", $gagApi, "Author", self::LOGGED);
+		$this->Add("GET", "shared", $gagApi, "Shared", self::OPEN);
 	}
 
 

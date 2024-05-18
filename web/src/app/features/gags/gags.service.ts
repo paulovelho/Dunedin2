@@ -48,7 +48,7 @@ export class GagsService {
 	}
 
 	public callSearchGagsApi(): Observable<any> {
-		console.info("searching page [" + this.page + "]: ", this.query);
+		// console.info("searching page [" + this.page + "]: ", this.query);
 		return this.api.search(this.query!, this.page)
 			.pipe(
 				map( rs => {
@@ -59,6 +59,13 @@ export class GagsService {
 						content: data
 					}
 				})
+			);
+	}
+
+	public getShared(value: string) {
+		return this.api.shared(value)
+			.pipe(
+				map( rs => rs.map((g: any) => this.getObjFromData(g)) )
 			);
 	}
 

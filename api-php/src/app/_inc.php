@@ -10,7 +10,8 @@ try {
 			"api",
 			"api/Authentication",
 			"admin",
-			"admin/importer"
+			"admin/importer",
+			"admin/search",
 		)
 		->AddFeature("Gag")
 		->Load();

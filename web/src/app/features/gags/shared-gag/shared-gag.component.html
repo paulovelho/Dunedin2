@@ -1,0 +1,16 @@
+<app-navbar [showUser]="false" ></app-navbar>
+<div class="container-fluid">
+	<div class="row">
+		<div class="main-wrapper"> 
+
+			<div class="main">
+				<app-loading *ngIf="loading"></app-loading>
+				<app-gag-item
+					*ngFor="let item of gags"
+					[item]="item"
+				></app-gag-item>
+				</div>
+
+		</div>
+	</div>
+</div>

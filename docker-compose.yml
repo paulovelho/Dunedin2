@@ -21,6 +21,7 @@ services:
     volumes: 
       - ./api-php/src:/var/www/html
       - ./api-php/logs:/var/www/logs
+      - ./api-php/cache:/var/www/cache
       - ./backups:/var/www/backups
       - ./medias:/var/www/medias
     ports:

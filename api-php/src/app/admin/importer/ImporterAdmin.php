@@ -3,11 +3,8 @@
 namespace Dunedin;
 
 use GagImporter;
-use GagImporterControl;
 use Magrathea2\Admin\AdminFeature;
 use Magrathea2\Admin\iAdminFeature;
-use Magrathea2\ConfigApp;
-use Magrathea2\MagratheaHelper;
 
 class ImporterAdmin extends AdminFeature implements iAdminFeature {
 	public string $featureName = "Importer";

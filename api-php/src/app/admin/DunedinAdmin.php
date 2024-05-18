@@ -33,6 +33,7 @@ class DunedinAdmin extends Admin implements \Magrathea2\Admin\iAdmin {
 	public function LoadFeatures() {
 		$this->features["gags"] = new GagAdmin();
 		$this->features["importer"] = new ImporterAdmin();
+		$this->features["search"] = new SearchAdmin();
 		$this->AddFeaturesArray($this->features);
 	}
 
@@ -57,6 +58,7 @@ class DunedinAdmin extends Admin implements \Magrathea2\Admin\iAdmin {
 		$menu
 		->Add($this->features["appconfig"]->GetMenuItem())
 		->Add($this->features["importer"]->GetMenuItem())
+		->Add($this->features["search"]->GetMenuItem())
 
 		->Add($menu->CreateTitle("Api"))
 		->Add($this->features["api"]->GetMenuItem())

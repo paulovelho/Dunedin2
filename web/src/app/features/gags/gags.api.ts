@@ -33,11 +33,17 @@ export class GagsApi extends BaseApi {
 	}
 
 	public search(query: string, page?: number): Observable<any> {
-		return this.post(this.url('/search'), { q: query, page })
+		return this.post(this.url('/search').queryParams({ page }), { q: query })
 			.pipe(this.defaultMap);
 	}
 	public author(query: string, page?: number): Observable<any> {
-		return this.post(this.url('/author'), { q: query, page })
+		return this.post(this.url('/author').queryParams({ page }), { q: query })
+			.pipe(this.defaultMap);
+	}
+
+	public shared(hash: string): Observable<any> {
+		const url = this.url("/shared").queryParams({ q: hash });
+		return this.get(url)
 			.pipe(this.defaultMap);
 	}
 

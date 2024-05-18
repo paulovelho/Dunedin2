@@ -10,6 +10,7 @@ api-php/src/vendor
 api-php/.composer.lock
 api-php/composer.phar
 api-php/medias/*
+api-php/cache/*
 
 database/dunedin.tgz
 

@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
 import { AppState } from '@app/app.state';
 import { AuthService } from '@app/services/auth/authentication.service';
 import { NavigationService } from '@app/services/navigation/navigation.service';
@@ -17,6 +17,7 @@ import { Store } from '@services/store/store.service';
 })
 
 export class NavbarComponent implements OnInit {
+	@Input() showUser: boolean = true;
 	public isMenuCollapsed: boolean = false;
 	public navTitle?: string = "...";
 	public user: iStoreUser|null = null;

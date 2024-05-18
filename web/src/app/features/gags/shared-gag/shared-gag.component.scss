@@ -1,0 +1,9 @@
+@import "variables";
+
+.main-wrapper{ 
+	margin-left: $sidebar-width;
+	padding: 30px 40px 20px;
+	margin-top: $navbar-height;
+	position: relative;
+	flex: 1;
+}
