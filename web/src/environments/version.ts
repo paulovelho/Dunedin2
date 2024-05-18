@@ -1,8 +1,8 @@
 // auto generated file
 export const buildInfo = {
-  timestamp: "2024-05-18T17:57:56",
-  commit: "05ab7e3b71ee6087762b25f0b5394fd4d19466ed",
+  timestamp: "2024-05-18T19:01:02",
+  commit: "11f068a6ba6da217e68b1b7bb21aa409b2633c92",
   commit_author: "Paulo Martins <paulovelho@paulovelho.com>",
-  commit_date: "2024-04-19T11:50:21",
-  commit_line: "05ab7e3 built prod"
+  commit_date: "2024-05-18T18:52:11",
+  commit_line: "11f068a fixing page change and adding share gag"
 }
