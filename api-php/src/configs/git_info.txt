@@ -1,0 +1,5 @@
+commit 4b95b9e59ec7d6452b12a8388abe1fd475e90833
+Author: Paulo Martins <paulovelho@paulovelho.com>
+Date:   Mon Jan 27 13:06:32 2025 -0300
+
+    v.2.0.2
