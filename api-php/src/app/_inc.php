@@ -1,6 +1,7 @@
 <?php
 
 require "../vendor/autoload.php";
+error_reporting(E_ALL ^ E_DEPRECATED);
 
 try {
 	Magrathea2\MagratheaPHP::Instance()

@@ -64,6 +64,7 @@ class GagImporter {
 		$highlights = explode('==========', $txtContent);
 
 		$this->control->DeleteFromOrigin($this->filename);
+		$parsed = [];
 		foreach ($highlights as $gagContent) {
 			array_push($parsed, $this->parseKindleGag($gagContent));
 		}
