@@ -21,6 +21,13 @@ class GagControl extends \Dunedin\Gag\Base\GagControlBase {
 		return $query;
 	}
 
+	public function DeleteFromOrigin($origin) {
+		$query = Query::Delete()
+			->Table("gags")
+			->Where(["origin" => $origin]);
+		return $this->Run($query);
+	}
+
 	public function IsHashThere($hash) {
 		$query = Query::Select("COUNT(1) as ok")
 			->Table("gags")

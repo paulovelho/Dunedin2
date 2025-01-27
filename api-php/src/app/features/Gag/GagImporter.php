@@ -10,6 +10,7 @@ include_once(__DIR__."/Base/GagBase.php");
 class GagImporter {
 
 	private $control;
+	private $filename;
 
 	public function __construct() {
 		$this->control = new GagControl();
@@ -31,7 +32,7 @@ class GagImporter {
 		$gag = new Gag();
 		try {
 			$gag->author = $this->cleanContent($data[0]);
-			$gag->origin = "kindle";
+			$gag->origin = $this->filename;
 			$gag->content = $data[3];
 	
 			$loc = explode(' | Added on ', $data[1]);
@@ -62,7 +63,7 @@ class GagImporter {
 		$txtContent = file_get_contents($file);
 		$highlights = explode('==========', $txtContent);
 
-		$parsed = [];
+		$this->control->DeleteFromOrigin($this->filename);
 		foreach ($highlights as $gagContent) {
 			array_push($parsed, $this->parseKindleGag($gagContent));
 		}
@@ -70,6 +71,7 @@ class GagImporter {
 	}
 
 	public function ImportKindle($fileName) {
+		$this->filename = $fileName;
 		$mediaFolder = ConfigApp::Instance()->Get("media_folder");
 		$filePath = MagratheaHelper::EnsureTrailingSlash($mediaFolder).$fileName;
 		if($filePath == false) throw new Exception("File not found", 500);
@@ -77,8 +79,6 @@ class GagImporter {
 
 		return $parse;
 	}
-
-
 
 	private function parseTwitterGag($tweet) {
 		// $gag = new Gag();
@@ -113,7 +113,7 @@ class GagImporter {
 
 		$parsed = [];
 		foreach ($twitterData as $tweet) {
-			array_push($parsed, $this->parseTwitterGag($tweet));
+			// array_push($parsed, $this->parseTwitterGag($tweet));
 		}
 		return $parsed;
 	}

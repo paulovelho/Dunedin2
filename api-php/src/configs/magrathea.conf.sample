@@ -1,0 +1,16 @@
+[general]
+	use_environment = "dev"
+	time_zone = "America/Sao_Paulo"
+
+[dev]
+	db_host = "host"
+	db_name = "dbname"
+	db_user = "user"
+	db_pass = "password-10"
+	logs_path = "/var/www/logs"
+	backups_path = "/var/www/backups"
+	cache_path = "/var/www/cache"
+	time_zone = "America/Sao_Paulo"
+	app_url = "http://magrathea.localhost.com:8080"
+	jwt_key = "password-30"
+	no_cache = 

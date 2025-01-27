@@ -25,6 +25,8 @@ edit file `importer/kindle.js` to set the filename to be imported
 run `node importer/kindle`
 
 
+
+
 ### mongo connect:
 ```
 show databases
@@ -37,3 +39,5 @@ db.Gags.drop()
 go to `/application`
 execute: `mongodump --db dunedin --gzip --archive=dunedin.tgz` to backup
 execute: `mongorestore --gzip --archive=dunedin.tgz` to restore
+
+

@@ -4,6 +4,7 @@ require "../vendor/autoload.php";
 
 try {
 	Magrathea2\MagratheaPHP::Instance()
+		->MinVersion("2.0")
 		->AppPath(realpath(dirname(__FILE__)))
 		->AddCodeFolder(__DIR__."/api/Authentication")
 		->AddCodeFolder(
